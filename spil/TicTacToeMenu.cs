@@ -61,8 +61,9 @@ namespace spil
         }
         private void DoActionFor2()
         {
-            Console.WriteLine("skriv koden til at få spillerens input til at sætte en brik");
-            Console.ReadLine();
+           //Console.WriteLine("skriv koden til at få spillerens input til at sætte en brik");
+           //Console.ReadLine();
+
         }
         private void DoActionFor3()
         {

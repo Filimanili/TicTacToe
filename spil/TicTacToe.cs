@@ -16,7 +16,7 @@ namespace spil
                 { ' ', ' ', ' '} };
         }
 
-        public string GetGameBoardView() //????????????????????????????
+        public string GetGameBoardView() //
         {
             string resultat = "";
             resultat = resultat + "Y\n";

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace spil
 { //Hej med jer
   //Virker det?
+  //HALLØJ
     class Program
     {
         static void Main(string[] args) // Kører selve programmet

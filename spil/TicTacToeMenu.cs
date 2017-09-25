@@ -11,8 +11,8 @@ namespace spil
             string choice = "";
             do
             {
-                ShowMenu();
-                choice = GetUserChoise();
+                ShowMenu(); // Viser menuen, lokal metode
+                choice = GetUserChoise(); 
                 switch (choice)
                 {
                     case "1": DoActionFor1(); break;
@@ -27,7 +27,7 @@ namespace spil
         private void ShowMenu()
         {
             Console.Clear();
-            if (ticTacToe != null) // ? // Udråbstegnligemed betyder: er ikke.
+            if (ticTacToe != null) // ? // Udråbstegnligemed betyderer ikke ligemed.
             {
                 Console.WriteLine(ticTacToe.GetGameBoardView());
             }
@@ -55,8 +55,9 @@ namespace spil
 
         private void DoActionFor1() //Skal erstattes. Skal referere til game boarded.
         {
-            Console.WriteLine("skriv koden til at opret nyt spil");
-            Console.ReadLine();
+            //  Console.WriteLine("skriv koden til at opret nyt spil");
+            //   Console.ReadLine(); 
+            ticTacToe = new TicTacToe();
         }
         private void DoActionFor2()
         {

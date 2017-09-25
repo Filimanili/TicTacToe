@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace spil
-{
+{ //Hej med jer
     class Program
     {
         static void Main(string[] args) // Kører selve programmet

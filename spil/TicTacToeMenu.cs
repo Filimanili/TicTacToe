@@ -61,9 +61,65 @@ namespace spil
         }
         private void DoActionFor2()
         {
-           //Console.WriteLine("skriv koden til at få spillerens input til at sætte en brik");
-           //Console.ReadLine();
+            //ticTacToe = new TicTacToe();
 
+
+            //Console.WriteLine("skriv koden til at få spillerens input til at sætte en brik");
+            //Console.ReadLine();
+            bool running = true;
+            string playerone = "";
+            string playertwo = "";
+            do
+            {
+
+                
+                for (int i = 0; i < 20; i++)
+                {
+                    ShowMenu();
+                    if (i == 0 || i == 2 || i == 4)
+                    {
+                         // Viser menuen, lokal metode
+                        
+                        playerone = GetUserChoise();
+                        switch (playerone)
+                        {
+                            case "1": DoActionFor1(); break;
+                            case "nederst venstre": ticTacToe.GameBoard[0, 0] = 'x'; break;
+                            case "øverst venstre": ticTacToe.GameBoard[0, 2] = 'x'; break;
+                            case "midten": ticTacToe.GameBoard[1, 1] = 'x'; break;
+                            case "midten venstre": ticTacToe.GameBoard[0, 1] = 'x'; break;
+                            case "øverst midten": ticTacToe.GameBoard[1, 2] = 'x'; break;
+                            case "nederst midten": ticTacToe.GameBoard[1, 0] = 'x'; break;
+                            case "øverst højre": ticTacToe.GameBoard[2, 2] = 'x'; break;
+                            case "midten højre": ticTacToe.GameBoard[2, 1] = 'x'; break;
+                            case "nederst højre": ticTacToe.GameBoard[2, 0] = 'x'; break;
+
+                            default: ShowMenuSelectionErroe(); break;
+
+                        }
+                    }
+                    else //(i == 1 || i == 3 || i == 5)
+                    {
+                        playertwo = GetUserChoise();
+                        switch (playertwo)
+                        {
+                            case "1": DoActionFor1(); break;
+                            case "nederst venstre": ticTacToe.GameBoard[0, 0] = '0'; break;
+                            case "øverst venstre": ticTacToe.GameBoard[0, 2] = '0'; break;
+                            case "midten": ticTacToe.GameBoard[1, 1] = '0'; break;
+                            case "midten venstre": ticTacToe.GameBoard[0, 1] = '0'; break;
+                            case "øverst midten": ticTacToe.GameBoard[1, 2] = '0'; break;
+                            case "nederst midten": ticTacToe.GameBoard[1, 0] = '0'; break;
+                            case "øverst højre": ticTacToe.GameBoard[2, 2] = '0'; break;
+                            case "midten højre": ticTacToe.GameBoard[2, 1] = '0'; break;
+                            case "nederst højre": ticTacToe.GameBoard[2, 0] = '0'; break;
+                            default: ShowMenuSelectionErroe(); break;
+
+                        }
+                    }
+                    
+                }
+            } while (running);
         }
         private void DoActionFor3()
         {

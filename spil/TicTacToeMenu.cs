@@ -83,17 +83,17 @@ namespace spil
                         playerone = GetUserChoise();
                         switch (playerone)
                         {
-                            case "1": DoActionFor1(); break;
-                            case "nederst venstre": ticTacToe.GameBoard[0, 0] = 'x'; break;
+                            case "1": DoActionFor1(); i = -1; break;
                             case "øverst venstre": ticTacToe.GameBoard[0, 2] = 'x'; break;
-                            case "midten": ticTacToe.GameBoard[1, 1] = 'x'; break;
                             case "midten venstre": ticTacToe.GameBoard[0, 1] = 'x'; break;
+                            case "nederst venstre": ticTacToe.GameBoard[0, 0] = 'x'; break;
                             case "øverst midten": ticTacToe.GameBoard[1, 2] = 'x'; break;
+                            case "midten": ticTacToe.GameBoard[1, 1] = 'x'; break;
                             case "nederst midten": ticTacToe.GameBoard[1, 0] = 'x'; break;
                             case "øverst højre": ticTacToe.GameBoard[2, 2] = 'x'; break;
                             case "midten højre": ticTacToe.GameBoard[2, 1] = 'x'; break;
                             case "nederst højre": ticTacToe.GameBoard[2, 0] = 'x'; break;
-
+                            
                             default: ShowMenuSelectionErroe(); break;
 
                         }
@@ -103,7 +103,7 @@ namespace spil
                         playertwo = GetUserChoise();
                         switch (playertwo)
                         {
-                            case "1": DoActionFor1(); break;
+                            case "1": DoActionFor1(); i = 0; break;
                             case "nederst venstre": ticTacToe.GameBoard[0, 0] = '0'; break;
                             case "øverst venstre": ticTacToe.GameBoard[0, 2] = '0'; break;
                             case "midten": ticTacToe.GameBoard[1, 1] = '0'; break;

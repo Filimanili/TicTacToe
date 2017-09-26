@@ -41,8 +41,10 @@ namespace spil
         public char Validate() //Antages at validere om der er nogle der har vundet.
         {
             char resultat = ' ';
-
-            // skriv validerings kode her
+            const char expected = 'x';
+            GameBoard = new char[3, 3] { {expected, expected, expected},
+                {' ', ' ', ' '},
+                { ' ', ' ', ' '} };
 
             return resultat;
         }

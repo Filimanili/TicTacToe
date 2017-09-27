@@ -38,16 +38,42 @@ namespace spil
             return resultat;
         }
 
-        public char Validate() //Antages at validere om der er nogle der har vundet.
+       // public char Validate() //Antages at validere om der er nogle der har vundet.
+            private static char CheckForThree(char[,] GameBoard)
         {
-            char resultat = ' ';
-            const char expected = 'x';
-            GameBoard = new char[3, 3] { {expected, expected, expected},
-                {' ', ' ', ' '},
-                { ' ', ' ', ' '} };
-
-            return resultat;
+            //  char resultat = ' ';
+            //   return GameWinner.ToCharArray;
+            char rowOneChar = GameBoard[0, 0];
+            char rowTwoChar = GameBoard[1, 0];
+            char rowThreeChar = GameBoard[2, 0];
+            if (rowOneChar == rowTwoChar &&
+                rowTwoChar == rowThreeChar);
+            {
+                return rowOneChar;
+            }
+            return ' ';
         }
+       // string GameWinner = "Du har vundet";
+            //{
+            //    var columnOneChar = GameBoard[0, 0];
+            //    var columnTwoChar = GameBoard[0, 1];
+            //    var columnThreeChar = GameBoard[0, 2];
+            //    if (columnOneChar == columnTwoChar &&
+            //        columnTwoChar == columnThreeChar)
+            //    {
+            //        return columnOneChar;
+            //    }
+            //    return ' ';
+            //}
+          
+            //string winnerState = "Du har vundet";
+            //const char expected = 'x';
+            //GameBoard = new char[3, 3] { {expected, expected, expected},
+            //  {' ', ' ', ' '},
+            //{ ' ', ' ', ' '} };
+
+            //return winnerState[0];
+        
 
         // her kan implementeres metoder til at sætte og flytte en brik
 

@@ -76,7 +76,7 @@ namespace spil
                 for (int i = 0; i < 20; i++)
                 {
                     ShowMenu();
-                    if (i == 0 || i == 2 || i == 4)
+                    if (i % 2 == 0)
                     {
                          // Viser menuen, lokal metode
                         
@@ -94,7 +94,7 @@ namespace spil
                             case "midten højre": ticTacToe.GameBoard[2, 1] = 'x'; break;
                             case "nederst højre": ticTacToe.GameBoard[2, 0] = 'x'; break;
                             
-                            default: ShowMenuSelectionErroe(); break;
+                            default: i--; break;
 
                         }
                     }
@@ -113,7 +113,7 @@ namespace spil
                             case "øverst højre": ticTacToe.GameBoard[2, 2] = '0'; break;
                             case "midten højre": ticTacToe.GameBoard[2, 1] = '0'; break;
                             case "nederst højre": ticTacToe.GameBoard[2, 0] = '0'; break;
-                            default: ShowMenuSelectionErroe(); break;
+                            default: i--; break;
 
                         }
                     }

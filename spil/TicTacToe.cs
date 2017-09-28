@@ -38,21 +38,71 @@ namespace spil
             return resultat;
         }
 
-       // public char Validate() //Antages at validere om der er nogle der har vundet.
-            private static char CheckForThree(char[,] GameBoard)
+        // public char Validate() //Antages at validere om der er nogle der har vundet.
+        public char Validate()
         {
-            //  char resultat = ' ';
-            //   return GameWinner.ToCharArray;
-            char rowOneChar = GameBoard[0, 0];
-            char rowTwoChar = GameBoard[1, 0];
-            char rowThreeChar = GameBoard[2, 0];
-            if (rowOneChar == rowTwoChar &&
-                rowTwoChar == rowThreeChar);
+
+            char resultat = ' ';
+
+            char BottomRowOne = GameBoard[0, 0];
+            char BottomRowTwo = GameBoard[1, 0];
+            char BottomRowThree = GameBoard[2, 0];
+            char leftRowOneChar = GameBoard[0, 0];
+            char leftRowTwoChar = GameBoard[0, 1];
+            char leftRowThreeChar = GameBoard[0, 2];
+
+            char midRowTwoChar = GameBoard[1, 1];
+            char midRowThreeChar = GameBoard[1, 2];
+
+            char rightRowTwoChar = GameBoard[2, 1];
+            char rightRowThreeChar = GameBoard[2, 2];
+            if (BottomRowOne == BottomRowTwo && BottomRowTwo == BottomRowThree) //Nederst vandret
             {
-                return rowOneChar;
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
             }
+            if (leftRowOneChar == leftRowTwoChar && leftRowTwoChar == leftRowThreeChar) //Venstre lodret
+            {
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
+            }
+            if (BottomRowOne == midRowTwoChar && midRowTwoChar == leftRowThreeChar) //Venstre til højre diagonal
+
+            {
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
+            }
+            if (BottomRowThree == midRowTwoChar && midRowTwoChar == leftRowThreeChar) // Højre til venstre diagonal
+            {
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
+            }
+            if (leftRowTwoChar == midRowTwoChar && midRowTwoChar == rightRowTwoChar) //Vandret midten
+            {
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
+            }
+            if (leftRowThreeChar == midRowThreeChar && midRowThreeChar == rightRowThreeChar) //Vandret øverst
+            {
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
+            }
+            if (BottomRowTwo == midRowTwoChar && midRowTwoChar == midRowThreeChar) //midten lodret
+            {
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
+            }
+            if (BottomRowThree == rightRowTwoChar && rightRowTwoChar == rightRowThreeChar)// Højre lodret
+            {
+                Console.WriteLine("Du har vundet");
+                Console.ReadKey();
+                
+            }
+            // return rowOneChar;
+
             return ' ';
         }
+    
        // string GameWinner = "Du har vundet";
             //{
             //    var columnOneChar = GameBoard[0, 0];

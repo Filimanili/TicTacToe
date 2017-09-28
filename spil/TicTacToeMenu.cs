@@ -55,9 +55,20 @@ namespace spil
 
         private void DoActionFor1() //Skal erstattes. Skal referere til game boarded.
         {
-            //  Console.WriteLine("skriv koden til at opret nyt spil");
-            //   Console.ReadLine(); 
-            ticTacToe = new TicTacToe();
+            Console.Clear();
+            Console.WriteLine("Vælg mellem at spille standard eller variation");
+            Console.WriteLine("Tast 1 for standard. Tast 2 for variation");
+            //Console.ReadLine();
+            string choiceOfGame = "";
+            choiceOfGame = GetUserChoise();
+            switch(choiceOfGame)
+            {
+                case "1": ticTacToe = new TicTacToe(); break;
+
+                    // case "øverst venstre": ticTacToe.GameBoard[0, 2] = 'x'; break;
+            }
+
+            //ticTacToe = new TicTacToe();
         }
         private void DoActionFor2()
         {
@@ -97,11 +108,13 @@ namespace spil
                             default: i--; break;
 
                         }
+                        ticTacToe.Validate();
                     }
                     else //(i == 1 || i == 3 || i == 5)
                     {
                         playertwo = GetUserChoise();
-                        switch (playertwo)
+                        switch (playertwo) 
+
                         {
                             case "1": DoActionFor1(); i = 0; break;
                             case "nederst venstre": ticTacToe.GameBoard[0, 0] = '0'; break;
@@ -116,6 +129,7 @@ namespace spil
                             default: i--; break;
 
                         }
+                        ticTacToe.Validate();
                     }
                     
                 }

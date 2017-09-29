@@ -42,90 +42,67 @@ namespace spil
         public char Validate()
         {
 
-            char resultat = ' ';
+            int resultatx = 'x';
+            int resultat0 = '0';
+            
+           
 
-            char BottomRowOne = GameBoard[0, 0];
-            char BottomRowTwo = GameBoard[1, 0];
-            char BottomRowThree = GameBoard[2, 0];
-            char leftRowOneChar = GameBoard[0, 0];
-            char leftRowTwoChar = GameBoard[0, 1];
-            char leftRowThreeChar = GameBoard[0, 2];
+            int BottomRowOne = GameBoard[0, 0];
+            int BottomRowTwo = GameBoard[1, 0];
+            int BottomRowThree = GameBoard[2, 0];
+            int leftRowOneChar = GameBoard[0, 0];
+            int leftRowTwoChar = GameBoard[0, 1];
+            int leftRowThreeChar = GameBoard[0, 2];
+            int midRowTwoChar = GameBoard[1, 1];
+            int midRowThreeChar = GameBoard[1, 2];
+            int rightRowTwoChar = GameBoard[2, 1];
+            int rightRowThreeChar = GameBoard[2, 2];
 
-            char midRowTwoChar = GameBoard[1, 1];
-            char midRowThreeChar = GameBoard[1, 2];
+            if (BottomRowOne == resultat0 && BottomRowTwo == resultat0 && BottomRowThree == resultat0 || 
+                leftRowTwoChar == resultat0 && midRowTwoChar == resultat0 && midRowThreeChar == resultat0 ||
+                leftRowThreeChar == resultat0 && midRowThreeChar == resultat0 &&  rightRowThreeChar == resultat0) //Bolle vandret
+            {
+                Console.WriteLine("BOLLE har vundet");
+                Console.ReadKey();
+            }
+            if (leftRowOneChar == resultat0 && leftRowTwoChar == resultat0 && leftRowThreeChar == resultat0 ||
+                BottomRowTwo == resultat0 && midRowTwoChar == resultat0 && midRowThreeChar == resultat0 ||
+                BottomRowThree == resultat0 && rightRowTwoChar == resultat0 && rightRowThreeChar == resultat0) // lodret bolle
+            {
+                Console.WriteLine("BOLLE har vundet");
+                Console.ReadKey();
+            }
+            if (BottomRowOne == resultat0 && midRowTwoChar == resultat0 && rightRowThreeChar == resultat0 ||
+                BottomRowThree == resultat0 && midRowTwoChar == resultat0 && leftRowThreeChar == resultat0 ) //Bolle diagonaler
+            {
+                Console.WriteLine("BOLLE har vundet");
+                Console.ReadKey();
+            }
+            if (BottomRowOne == resultatx && BottomRowTwo == resultatx && BottomRowThree == resultatx ||
+                 leftRowTwoChar == resultatx && midRowTwoChar == resultatx && midRowThreeChar == resultatx ||
+                 leftRowThreeChar == resultatx && midRowThreeChar == resultatx && rightRowThreeChar == resultatx) //Kryds vandret
+            {
+                Console.WriteLine("KRYDS har vundet");
 
-            char rightRowTwoChar = GameBoard[2, 1];
-            char rightRowThreeChar = GameBoard[2, 2];
-            if (BottomRowOne == BottomRowTwo && BottomRowTwo == BottomRowThree) //Nederst vandret
-            {
-                Console.WriteLine("Du har vundet");
                 Console.ReadKey();
-            }
-            if (leftRowOneChar == leftRowTwoChar && leftRowTwoChar == leftRowThreeChar) //Venstre lodret
-            {
-                Console.WriteLine("Du har vundet");
-                Console.ReadKey();
-            }
-            if (BottomRowOne == midRowTwoChar && midRowTwoChar == leftRowThreeChar) //Venstre til højre diagonal
 
+            }
+            if (leftRowOneChar == resultatx && leftRowTwoChar == resultatx && leftRowThreeChar == resultatx ||
+                BottomRowTwo == resultatx && midRowTwoChar == resultatx && midRowThreeChar == resultatx ||
+                BottomRowThree == resultatx && rightRowTwoChar == resultatx && rightRowThreeChar == resultatx) // lodret kryds
             {
-                Console.WriteLine("Du har vundet");
+                Console.WriteLine("KRYDS har vundet");
                 Console.ReadKey();
             }
-            if (BottomRowThree == midRowTwoChar && midRowTwoChar == leftRowThreeChar) // Højre til venstre diagonal
+            if (BottomRowOne == resultatx && midRowTwoChar == resultatx && rightRowThreeChar == resultatx ||
+                BottomRowThree == resultatx && midRowTwoChar == resultatx && leftRowThreeChar == resultatx) // diagonaler kryds
             {
-                Console.WriteLine("Du har vundet");
+                Console.WriteLine("KRYDS har vundet");
                 Console.ReadKey();
             }
-            if (leftRowTwoChar == midRowTwoChar && midRowTwoChar == rightRowTwoChar) //Vandret midten
-            {
-                Console.WriteLine("Du har vundet");
-                Console.ReadKey();
-            }
-            if (leftRowThreeChar == midRowThreeChar && midRowThreeChar == rightRowThreeChar) //Vandret øverst
-            {
-                Console.WriteLine("Du har vundet");
-                Console.ReadKey();
-            }
-            if (BottomRowTwo == midRowTwoChar && midRowTwoChar == midRowThreeChar) //midten lodret
-            {
-                Console.WriteLine("Du har vundet");
-                Console.ReadKey();
-            }
-            if (BottomRowThree == rightRowTwoChar && rightRowTwoChar == rightRowThreeChar)// Højre lodret
-            {
-                Console.WriteLine("Du har vundet");
-                Console.ReadKey();
-                
-            }
-            // return rowOneChar;
 
             return ' ';
         }
-    
-       // string GameWinner = "Du har vundet";
-            //{
-            //    var columnOneChar = GameBoard[0, 0];
-            //    var columnTwoChar = GameBoard[0, 1];
-            //    var columnThreeChar = GameBoard[0, 2];
-            //    if (columnOneChar == columnTwoChar &&
-            //        columnTwoChar == columnThreeChar)
-            //    {
-            //        return columnOneChar;
-            //    }
-            //    return ' ';
-            //}
-          
-            //string winnerState = "Du har vundet";
-            //const char expected = 'x';
-            //GameBoard = new char[3, 3] { {expected, expected, expected},
-            //  {' ', ' ', ' '},
-            //{ ' ', ' ', ' '} };
-
-            //return winnerState[0];
-        
-
-        // her kan implementeres metoder til at sætte og flytte en brik
 
     }
 }
